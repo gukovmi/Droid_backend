@@ -9,5 +9,5 @@ import ru.focus.start.loan.features.auth.model.UserEntity
 @RepositoryRestResource(exported = false)
 interface UserRepository : CrudRepository<UserEntity, Long> {
 
-	fun findByName(name: String): UserEntity?
+    fun findByName(name: String): UserEntity?
 }

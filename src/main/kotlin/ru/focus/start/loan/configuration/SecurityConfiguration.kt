@@ -12,31 +12,31 @@ import ru.focus.start.loan.features.auth.service.UserService
 @Configuration
 @EnableWebSecurity
 class SecurityConfiguration(
-	private val userService: UserService,
-	private val passwordEncoder: PasswordEncoder
+        private val userService: UserService,
+        private val passwordEncoder: PasswordEncoder
 ) : WebSecurityConfigurerAdapter() {
 
 
-	override fun configure(http: HttpSecurity?) {
-		http ?: return
-		super.authenticationManagerBean()
+    override fun configure(http: HttpSecurity?) {
+        http ?: return
+        super.authenticationManagerBean()
 
-		http
-			.csrf().disable()
-			.authorizeRequests()
-			.antMatchers("/registration", "/login").not().fullyAuthenticated()
-			.antMatchers(
-				"/",
-				"/actuator/**",
-				"/swagger-ui/**",
-				"/swagger-resources/**",
-				"/webjars/**",
-				"/v2/api-docs/**",
-			).permitAll()
-			.anyRequest().authenticated()
-			.and()
-			.addFilter(AuthorizationFilter(userService, authenticationManager()))
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+        http
+                .csrf().disable()
+                .authorizeRequests()
+                .antMatchers("/registration", "/login").not().fullyAuthenticated()
+                .antMatchers(
+                        "/",
+                        "/actuator/**",
+                        "/swagger-ui/**",
+                        "/swagger-resources/**",
+                        "/webjars/**",
+                        "/v2/api-docs/**",
+                ).permitAll()
+                .anyRequest().authenticated()
+                .and()
+                .addFilter(AuthorizationFilter(userService, authenticationManager()))
+                .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
 
-	}
+    }
 }

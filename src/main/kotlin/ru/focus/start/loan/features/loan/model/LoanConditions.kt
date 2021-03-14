@@ -5,7 +5,7 @@ import javax.persistence.Embeddable
 
 @Embeddable
 data class LoanConditions(
-	var percent: Double? = null,
-	var period: Int? = null,
-	var maxAmount: BigDecimal? = null,
+        var percent: Double? = null,
+        var period: Int? = null,
+        var maxAmount: BigDecimal? = null,
 )

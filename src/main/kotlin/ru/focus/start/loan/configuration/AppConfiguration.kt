@@ -9,11 +9,11 @@ import org.springframework.security.crypto.password.PasswordEncoder
 @Configuration
 class AppConfiguration {
 
-	@Bean
-	fun passwordEncoder(): PasswordEncoder =
-		BCryptPasswordEncoder()
+    @Bean
+    fun passwordEncoder(): PasswordEncoder =
+            BCryptPasswordEncoder()
 
-	@Bean
-	fun restConfiguration(): RepositoryRestConfigurer =
-		RestConfiguration()
+    @Bean
+    fun restConfiguration(): RepositoryRestConfigurer =
+            RestConfiguration()
 }

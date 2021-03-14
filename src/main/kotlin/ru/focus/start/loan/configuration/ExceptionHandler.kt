@@ -7,11 +7,11 @@ import org.springframework.web.server.ResponseStatusException
 import javax.servlet.http.HttpServletRequest
 
 @ControllerAdvice
-class ExceptionHandler  {
+class ExceptionHandler {
 
-	@ExceptionHandler(ResponseStatusException::class)
-	fun handleExceptionInternal(request: HttpServletRequest, ex: ResponseStatusException): ResponseEntity<Any> {
+    @ExceptionHandler(ResponseStatusException::class)
+    fun handleExceptionInternal(request: HttpServletRequest, ex: ResponseStatusException): ResponseEntity<Any> {
 
-		return ResponseEntity(ex.message, ex.status)
-	}
+        return ResponseEntity(ex.message, ex.status)
+    }
 }

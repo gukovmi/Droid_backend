@@ -6,8 +6,8 @@ import org.springframework.http.MediaType
 
 class RestConfiguration : RepositoryRestConfigurer {
 
-	override fun configureRepositoryRestConfiguration(config: RepositoryRestConfiguration) {
-		config.defaultMediaType = MediaType.APPLICATION_JSON
-		config.useHalAsDefaultJsonMediaType(false)
-	}
+    override fun configureRepositoryRestConfiguration(config: RepositoryRestConfiguration) {
+        config.defaultMediaType = MediaType.APPLICATION_JSON
+        config.useHalAsDefaultJsonMediaType(false)
+    }
 }
