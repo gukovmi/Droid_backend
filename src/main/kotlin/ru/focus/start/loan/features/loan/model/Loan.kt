@@ -1,6 +1,7 @@
 package ru.focus.start.loan.features.loan.model
 
-import net.minidev.json.annotate.JsonIgnore
+
+import com.fasterxml.jackson.annotation.JsonIgnore
 import org.hibernate.annotations.CreationTimestamp
 import ru.focus.start.loan.features.auth.model.UserEntity
 import java.math.BigDecimal

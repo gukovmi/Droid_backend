@@ -1,6 +1,7 @@
 package ru.focus.start.loan.features.auth.model
 
-import net.minidev.json.annotate.JsonIgnore
+
+import com.fasterxml.jackson.annotation.JsonIgnore
 import ru.focus.start.loan.features.loan.model.Loan
 import ru.focus.start.loan.features.loan.model.LoanConditions
 import javax.persistence.*
